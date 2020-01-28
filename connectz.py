@@ -44,15 +44,12 @@ class play:
         return int(position, 2), int(mask, 2) # Encode binary strings to integer
 
     def is_win(self, bitboard):
-        if (bitboard & (bitboard >> (self.x - 1)) & (bitboard >> 2*(self.x - 1)) & (bitboard >> 3*(self.x - 1)) != 0): return True # diagonal \
-        if (bitboard & (bitboard >> (self.x + 1)) & (bitboard >> 2*(self.x + 1)) & (bitboard >> 3*(self.x + 1)) != 0): return True # diagonal /
-        if (bitboard & (bitboard >> self.x) & (bitboard >> 2*self.x) & (bitboard >> 3*self.x) != 0): return True # horizontal
-        if (bitboard & (bitboard >> 1) & (bitboard >>  2) & (bitboard >>  3) != 0): return True # vertical
-        # directions = {1, self.x, self.x - 1, self.x + 1}
-        # for direction in directions:
-        #     bb = bitboard & (bitboard >> direction)
-        #     if ((bb & (bb >> (2 * direction))) != 0): return True
-        # return False
+        directions = [1, self.x, self.x - 1, self.x + 1]
+        for direction in directions:
+            bb = bitboard
+            for i in range(1, self.z):
+                bb &= (bitboard >> i * direction)
+            if bb != 0 : return True
 
 def read_file_content(f):
     headerLine = f.readline()
