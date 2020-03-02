@@ -1,3 +1,5 @@
+#connectz
+
 connectz.py script was built and tested in Windows 10 running Python 3.7.5 (tags/v3.7.5:5c02a39a0b, Oct 15 2019, 00:11:34) [MSC v.1916 64 bit (AMD64)]
 Checking game wins or valid moves can take a sizable computation time. Bitboards offer a unique solution to those game checks. Bitboards are a data structure to represent the game's state. The idea is to store the game's state in an array of bits. Once in that form, it is possible to perform operations such as adjacency and intersections.
 
