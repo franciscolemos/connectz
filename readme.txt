@@ -52,6 +52,16 @@ dataIllegalRow2.dat Illegal row. The script detects if the row is outside the bo
 Finally the script will loop until the user types a valid file name.
 
 
+### Installing
+
+git clone https://github.com/franciscolemos/connectz.git
+
+### Run
+
+python main.py
+
+
+
 
 
 
